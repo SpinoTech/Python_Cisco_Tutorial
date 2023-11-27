@@ -1,0 +1,40 @@
+# doctest 
+#--describe extra information about the function classes in python
+#--test function describe
+
+#in python we have a standard library a test framework known as #**doctest**
+
+#-> it looks for test
+#-> verify all interactive example *--correct , up to date *
+
+#""" this is used for create docstring
+
+
+
+
+
+
+# 1) this is the success
+
+#importing the module
+import doctest
+
+#function to calculate the factorial of a num
+def cal_fact(num):
+    """
+    This is the Doc string or the description of the function 
+    this function will return the factorial of the number shell commands for testig
+    invoking the function followed by expected output
+    >>> cal_fact(5)
+    120
+    >>> cal_fact(4)
+    24
+    """
+    if num<=1:
+        return 1
+    return num*cal_fact(num-1)
+
+# invocking the testmode function
+
+if __name__=='__main__':
+    doctest.testmod(name='cal_fact' , verbose=True)
